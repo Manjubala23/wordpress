@@ -1,0 +1,17 @@
+<?php get_header(); ?>
+ 
+
+ 
+<?php if( have_posts() ) : while( have_posts() ) : the_post(); ?>
+<article class=“post”>
+ 
+<h2> <?php the_title(); ?>
+ 
+ <p class=“post__meta”>
+Published the: ?php the_time( get_option( ‘date_format’ ) ); ?>
+By: <?php user_name(); ?>
+<?php the_content(); ?> </p>
+</p>
+</article>
+<?php endwhile; endif; ?>
+<?php get_footer(); ?>
